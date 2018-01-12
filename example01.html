@@ -1,0 +1,50 @@
+<style>
+	body{
+		font-family: 'Arial', sans-serif;
+		font-size: 16px;
+		color: #000;
+		line-height: 1.3;
+		min-width: 320px;
+	}
+	.container{
+		max-width: 1170px;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		background-color: yellow;
+	}
+	.card{
+		width: 30%;
+		border: 1px solid green;
+	}
+	img{
+		width: 100%;
+	}
+</style>
+
+<div id="root"></div>
+<script src="https://fb.me/react-15.0.0.js"></script>
+<script src="https://fb.me/react-dom-15.0.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+<script type="text/babel">
+    function Card(props) {
+        return (
+            <div className="card">
+            <h1>{props.name}</h1>
+            <p>Year: {props.year}</p>
+				<img src= {props.pic} alt=""/>
+        </div>
+    	)
+    }
+    const film = (
+			<div>
+				<Card name="The collector" year="2009" pic="img/2.jpg"/>
+				<Card name="Insidious" year="2010" pic="img/3.jpg"/>
+				<Card name="Light out" year="2016" pic="img/1.jpg"/>
+			</div>
+    );
+    const root = document.getElementById('root');
+    ReactDOM.render(film, root);
+</script>
